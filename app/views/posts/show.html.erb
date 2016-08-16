@@ -12,4 +12,14 @@
   <p class='body'>
     <%= @post.body %>
   </p>
+  <div id='comments'>
+    <% if @post.comments.count == 1 %>
+      <h2><%= @post.comments.count %> Comment</h2>
+    <% else %>
+      <h2><%= @post.comments.count %> Comments</h2>
+    <% end %>
+    <%= render @post.comments %>
+    <h3> Join Discussion: </h3>
+    <%= render "comments/form" %>
+  </div>
 </div>
